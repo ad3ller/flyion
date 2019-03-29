@@ -90,3 +90,5 @@ ENV/
 
 # images
 #images/
+
+.vscode/
