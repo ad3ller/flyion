@@ -53,8 +53,8 @@ def acceleration(fa, voltages, position, charge_mass_ratio):
     return - charge_mass_ratio * np.array(fa.field_r(position, voltages))
 
 def rk4(fa, voltages, x0, v0, charge_mass_ratio, dt):
-    """ Use the fourth order Runge Kutta algorithm to find the position and velocity at t = t + dt of
-        a dipole in an inhomogenous electric field.
+    """ Use the fourth order Runge Kutta algorithm to find the position and
+    velocity at t = t + dt of a charged particle in an electric field.
 
         Parameters
         ----------
