@@ -31,4 +31,4 @@ Basic use
 
     # many particles, 100 MHz oscillating voltages
     initial = initialize(100, sigma_x=1e-3)
-    df = fly(fa, lambda t: [np.sin(t * 1e-8), +200, -300], initial, -e, m_e, dt=5e-10, mode="full")
+    df = fly(fa, lambda t: [np.sin(t * 1e8), +200, -300], initial, -e, m_e, dt=5e-10, mode="full")
