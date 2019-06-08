@@ -130,9 +130,9 @@ def trajectory(fa, vol_t, t0, x0, v0, charge, mass, dt, max_iterations=int(1e6))
     x = np.array(x0)
     v = np.array(v0)
     voltages = vol_t(t)
-    KE = kinetic_energy(v, mass)
-    PE = potential_energy(fa, voltages, x, charge)
-    result = [[t, *x, KE, PE]]
+    ke = kinetic_energy(v, mass)
+    pe = potential_energy(fa, voltages, x, charge)
+    result = [[t, *x, ke, pe]]
     # step-by-step trajectory
     while i < max_iterations:
         try:
@@ -140,10 +140,10 @@ def trajectory(fa, vol_t, t0, x0, v0, charge, mass, dt, max_iterations=int(1e6))
             t += dt
             voltages = vol_t(t)
             # energy
-            KE = kinetic_energy(v, mass)
-            PE = potential_energy(fa, voltages, x, charge)
+            ke = kinetic_energy(v, mass)
+            pe = potential_energy(fa, voltages, x, charge)
             # record
-            result.append([t, *x, KE, PE])
+            result.append([t, *x, ke, pe])
             # check if particle has hit an electrode
             if fa.electrode_r(x):
                 break
