@@ -59,7 +59,7 @@ def rk4(fa, voltages, x0, v0, charge_mass_ratio, dt):
         Parameters
         ----------
         fa                :: FastAdjust
-        vol_t             :: func(t), returns np.array([v0, v1, ... vn]) (V)
+        voltages          :: np.array([v0, v1, ... vn])                  (V)
         t                 :: float64                                     (s)
         x0                :: np.array([x, y, z])                         (m)
         v0                :: np.array([vx, vy, vz])                      (m / s)
@@ -98,23 +98,23 @@ def trajectory(fa, vol_t, t0, x0, v0, charge, mass, dt, max_iterations=int(1e6))
         
         Parameters
         ----------
-        fa : FastAdjust
+        fa :: FastAdjust
             fast-adjust potential arrays
-        vol_t : func(t),
+        vol_t :: func(t),
             returns np.array([v0, v1, ... vn])              (V)       
-        t0 : float64
+        t0 :: float64
             initial time coordinate                         (s)
-        x0 : np.array([x, y, z], dtype=float64)
+        x0 :: np.array([x, y, z], dtype=float64)
             initial position vector                         (m)
-        v0 : np.array([vx, vy, vz], dtype=float64)
+        v0 :: np.array([vx, vy, vz], dtype=float64)
             initial velocity vector                         (m / s)
-        charge : float64
+        charge :: float64
             particle charge                                 (C m)
-        mass : float64
+        mass :: float64
             particle mass                                   (kg)
-        dt : float64
+        dt :: float64
             time step                                       (s)
-        max_iterations : int
+        max_iterations :: int
             (default: 1 million)
 
         Returns
@@ -161,23 +161,23 @@ def final_position(fa, vol_t, t0, x0, v0, charge, mass, dt,
         
         Parameters
         ----------
-        fa : FastAdjust
+        fa :: FastAdjust
             fast-adjust potential arrays
-        vol_t : func(t),
+        vol_t :: func(t),
             returns np.array([v0, v1, ... vn])              (V)       
-        t0 : float64
+        t0 :: float64
             initial time coordinate                         (s)
-        x0 : np.array([x, y, z], dtype=float64)
+        x0 :: np.array([x, y, z], dtype=float64)
             initial position vector                         (m)
-        v0 : np.array([vx, vy, vz], dtype=float64)
+        v0 :: np.array([vx, vy, vz], dtype=float64)
             initial velocity vector                         (m / s)
-        charge : float64
+        charge :: float64
             particle charge                                 (C m)
-        mass : float64
+        mass :: float64
             particle mass                                   (kg)
-        dt : float64
+        dt :: float64
             time step                                       (s)
-        max_iterations : int
+        max_iterations :: int
             (default: 1 million)
 
         Returns
