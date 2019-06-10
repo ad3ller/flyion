@@ -44,7 +44,7 @@ def fly(fa, vol_t, initial, charge, mass, dt, **kwargs):
     max_iterations = kwargs.get("max_iterations", int(1e6))
     mode = kwargs.get("mode", "full")
     tqdm_kw = kwargs.get("tqdm_kw", {})
-    # fly dipoles
+    # fly ions
     num = len(initial.index)
     result = {}
     for i, row in tqdm(initial.iterrows(), total=len(initial.index), **tqdm_kw):
